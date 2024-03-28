@@ -110,7 +110,7 @@ let convertTemperature (temperature: float) (fromScale: TemperatureScale) (toSca
 type JsonValue =
     | JsonObject of (string * JsonValue) list
     | JsonArray of JsonValue list
-    | JsonString of string
+    | JsonString of string 
     | JsonNumber of float
     | JsonBoolean of bool
 
