@@ -114,11 +114,19 @@ type JsonValue =
     | JsonNumber of float
     | JsonBoolean of bool
 
+// Recursively prints a JSON value as a string.
+// json is a parameter. It is the JSON value to be pretty printed.
+// Returns a string representation of the pretty printed JSON value.
 let rec prettyPrintJson (json: JsonValue) : string =
     let indent = "  "
+
+    // Recursively generates the indentation string based on the level.
+    // Returns the indentation string.
     let rec indentString (level: int) : string =
         String.replicate (level * 2) indent
 
+    // Recursively pretty prints a JSON value with the specified indentation level.
+    // Returns a string representation of the pretty printed JSON value.
     let rec prettyPrintValue (value: JsonValue) (level: int) : string =
         match value with
         | JsonObject properties ->
